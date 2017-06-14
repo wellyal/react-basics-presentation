@@ -63,7 +63,7 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide", "zoom"]} bgDarken={0.75} bgImage={images.me.replace("/", "")} bgColor="primary">
+        <Slide transition={["zoom"]} bgDarken={0.75} bgImage={images.me.replace("/", "")} bgColor="primary">
           <Appear fid="1">
             <div>
               <Text textColor="tertiary" size={1}>
@@ -77,7 +77,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
 
-        <Slide transition={["spin", "zoom"]} textColor="tertiary" bgColor="secondary">
+        <Slide transition={["zoom"]} textColor="tertiary" bgColor="secondary">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
             Afinal, O que é ReactJS?
           </Heading>
