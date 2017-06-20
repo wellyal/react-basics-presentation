@@ -37,7 +37,13 @@ const images = {
   facepalm: require("../assets/facepalm.jpg"),
   wikipedia: require("../assets/wikipedia.png"),
   diagram1: require("../assets/diagrams/diagram1.png"),
-  kat: require("../assets/kat.png")
+  diagram2: require("../assets/diagrams/diagram2.png"),
+  diagram3: require("../assets/diagrams/diagram3.png"),
+  diagram4: require("../assets/diagrams/diagram4.png"),
+  kat: require("../assets/kat.png"),
+  observing: require("../assets/observing.gif"),
+  trump: require("../assets/donald-trump.jpg"),
+  es6: require("../assets/es6.jpg")
 };
 
 preloader(images);
@@ -47,7 +53,8 @@ const theme = createTheme({
   primary: "white",
   secondary: "#1F2022",
   tertiary: "#03A9FC",
-  quartenary: "#CECECE"
+  quartenary: "#CECECE",
+  alarm: "#EE3B3B"
 }, {
   primary: "Montserrat",
   secondary: "Helvetica"
@@ -104,17 +111,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["zoom"]} bgDarken={0.75} bgImage={images.wikipedia.replace("/", "")}>
-          <Appear fid="1">
-            <BlockQuote>
-              <Quote>
-                <Text textSize="28px" textColor="primary">
-                  Programação reativa tem sido proposta como uma forma de simplificar a criação de UI interativa, mesmo sendo uma paradigma geral da programação.
-                </Text>
-              </Quote>
-              <Cite>Wikipedia</Cite>
-            </BlockQuote>
-          </Appear>
-          <Appear fid="2">
+          <Appear>
             <BlockQuote>
               <Quote>
                 <Text textSize="28px" textColor="primary">
@@ -124,7 +121,7 @@ export default class Presentation extends React.Component {
               <Cite>Wikipedia</Cite>
             </BlockQuote>
           </Appear>
-          <Appear fid="3">
+          <Appear>
             <BlockQuote>
               <Quote>
                 <Text textSize="28px" textColor="primary">
@@ -134,11 +131,97 @@ export default class Presentation extends React.Component {
               <Cite>Wikipedia</Cite>
             </BlockQuote>
           </Appear>
+          <Appear>
+            <BlockQuote>
+              <Quote>
+                <Text textSize="28px" textColor="primary">
+                  Programação reativa tem sido proposta como uma forma de simplificar a criação de UI interativa, mesmo sendo uma paradigma geral da programação.
+                </Text>
+              </Quote>
+              <Cite>Wikipedia</Cite>
+            </BlockQuote>
+          </Appear>
+        </Slide>
+
+
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Image width="100%" src={images.diagram4}/>
+        </Slide>
+
+        <Slide transition={["zoom"]} align="center flex-start" bgColor="default">
+          <Appear>
+            <Text margin="0 0 30px" textSize="36px" textColor="primary">
+              E se eu disser que esse modelo foi proposto para OO !?
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="0 0 30px" textSize="36px" textColor="tertiary">
+              E se eu disser que essa proposta gerou um padrão de projeto !?
+            </Text>
+          </Appear>
+          <Appear>
+            <div>
+              <Text margin="0 0 30px" textSize="36px" textColor="alarm">
+                E se eu disse que Donald Trump foi eleito presidente dos EUA?
+              </Text>
+              <Image src={images.kat} />
+            </div>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["zoom"]} align="center flex-start" bgImage={images.trump.replace("/", "")}>
+          <Heading caps fit size={3} textColor="primary">
+            Aceita que dói menos!
+          </Heading>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Image src={images.observing} />
+          <Heading>Observer</Heading>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="default" textColor="tertiary" align="center flex-start">
+          <List>
+            <Appear>
+              <ListItem>Você tem um objeto SUBJECT</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>O subject mantém uma lista de dependentes</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Envia um notify aos observers de alteração do estado</ListItem>
+            </Appear>
+          </List>
+
+          <List textColor="alarm">
+            <Appear>
+              <ListItem>Você tem um Observer</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>O obsever observa um subject</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>O observer pode subscribe ou unsubscribe ao subject</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>O observer reage quando o subject é alterado</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Image src={images.diagram2} height="500px" />
+          <Image src={images.observing} />
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary" align="center center">
           <Image src={images.diagram1} height="100%" width="100%"/>
         </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Image src={images.es6} height="100%" width="100%"/>
+        </Slide>
+
       </Deck>
     );
   }
